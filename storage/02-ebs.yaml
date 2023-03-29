@@ -4,7 +4,7 @@ metadata:
   name: test-ebs
 spec:
   containers:
-  - image: registry.k8s.io/test-webserver
+  - image: nginx
     name: test-container
     volumeMounts:
     - mountPath: /test-ebs
