@@ -5,7 +5,7 @@ metadata:
   name: efs-sc
 provisioner: efs.csi.aws.com
 parameters:
-  fileSystemId: fs-0850821d5de0492a1
+  fileSystemId: fs-037834c788fb6cd5c
   directoryPerms: "777"
   gidRangeStart: "1000"
   gidRangeEnd: "2000"
