@@ -1,19 +1,12 @@
 apiVersion: v1
-kind: Pod
+kind: PersistentVolume
 metadata:
-  name: test-ebs
+  name: my-ebs-pv
 spec:
-  containers:
-  - image: nginx
-    name: test-container
-    volumeMounts:
-    - mountPath: /test-ebs
-      name: test-volume
-  nodeSelector:
-    az: 1a
-  volumes:
-  - name: test-volume
-    # This AWS EBS volume must already exist.
-    awsElasticBlockStore:
-      volumeID: "vol-03c0a70c7b7befa3a"
-      fsType: ext4
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  awsElasticBlockStore:
+    volumeID: "vol-0667408b978f8acd7"
+    fsType: ext4
