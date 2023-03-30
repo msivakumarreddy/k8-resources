@@ -34,8 +34,7 @@ kind: Pod
 metadata:
   name: my-nginx-pod
 spec:
-  nodeSelector:
-       env: prod
+
   containers:
   - name: nginx
     image: nginx:latest
