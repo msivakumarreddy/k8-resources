@@ -9,7 +9,10 @@ parameters:
   directoryPerms: "777"
   gidRangeStart: "1000"
   gidRangeEnd: "2000"
+  provisioningMode: efs-ap
   encrypted: "false"
+  performanceMode: generalPurpose
+  throughputMode: bursting
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -23,13 +26,15 @@ spec:
     requests:
       storage: 1Gi
   volumeMode: Filesystem
+  selector:
+    matchLabels:
+      type: efs
 ---
 apiVersion: v1
 kind: Pod
 metadata:
   name: my-nginx-pod
 spec:
-
   containers:
   - name: nginx
     image: nginx:latest
