@@ -106,10 +106,10 @@ spec:
     - name: config-volume
       mountPath: /etc/nginx/nginx.conf
       subPath: nginx.conf
-volumes:
-- name: config-volume
-  configMap:
-    name: nginx-config
+  volumes:
+  - name: config-volume
+    configMap:
+      name: nginx-config
 ---
 apiVersion: v1
 kind: Service
