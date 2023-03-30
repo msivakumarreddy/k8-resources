@@ -25,12 +25,10 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  volumeName: efs-volume
   volumeMode: Filesystem
-  dataSource:
-    kind: EFSVolumeSource
-    fileSystemId: fs-037834c788fb6cd5c
-    rootDirectory: "/"
+  selector:
+    matchLabels:
+      type: efs
 ---
 apiVersion: v1
 kind: Pod
