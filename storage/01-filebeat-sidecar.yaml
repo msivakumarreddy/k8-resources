@@ -4,7 +4,15 @@ metadata:
   name: filebeat-config
 data:
   filebeat.yml: |-
-    {{ .Files.Get "filebeat.yaml" | nindent 4 }}
+    filebeat.inputs:
+    - type: log
+      enabled: true
+      paths:
+        - /var/log/nginx/access.log
+        - /var/log/nginx/error.log
+
+    output.elasticsearch:
+      hosts: ["elasticsearch:9200"]
 ---
 apiVersion: v1
 kind: Pod
