@@ -5,6 +5,7 @@ metadata:
   labels:
     type: ebs
 spec:
+  storageClassName: manual
   capacity:
     storage: 10Gi
   accessModes:
@@ -18,6 +19,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: my-ebs-pvc
 spec:
+  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:
