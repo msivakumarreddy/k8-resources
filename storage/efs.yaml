@@ -5,11 +5,10 @@ metadata:
   name: efs-sc
 provisioner: efs.csi.aws.com
 parameters:
-  fileSystemId: fs-037834c788fb6cd5c
+  fileSystemId: fs-061949b9a89ad07f0
   directoryPerms: "777"
   gidRangeStart: "1000"
   gidRangeEnd: "2000"
-  provisioningMode: efs-ap
   encrypted: "false"
   performanceMode: generalPurpose
   throughputMode: bursting
