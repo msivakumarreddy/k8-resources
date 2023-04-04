@@ -13,3 +13,4 @@ spec:
   - key: "tier"
     operator: "Exists"
     effect: "NoSchedule"
+    value: "DB"
